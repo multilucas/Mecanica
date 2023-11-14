@@ -1,4 +1,4 @@
-public class Veiculo {
+public abstract class Veiculo {
     private String placa;
     private String marca;
     private String modelo;
@@ -14,8 +14,6 @@ public class Veiculo {
         cor = "";
         velocMax = 0;
         qtdRodas = 0;
-
-
     }
 
 
@@ -85,8 +83,11 @@ public class Veiculo {
     public void setMotor(Motor motor) {
         this.motor = motor;
     }
+    
+    public abstract float calcVel(float velocMax);
 
     public String toString() {
-        return "Placa: " + placa +"\nMarca: " + marca + "\nModelo: " + modelo + "\nCor: " + cor + "\nVelocidade Maxima: " + velocMax + "\nQuantidade de rodas: " + qtdRodas + "\nMotor: " + motor;
+        return "Placa: " + placa +"\nMarca: " + marca + "\nModelo: " + modelo + "\nCor: " + cor + "\nVelocidade Maxima: " + velocMax + "\nQuantidade de rodas: " + qtdRodas + "\n" + motor;
     }
+
 }
